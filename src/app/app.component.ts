@@ -16,11 +16,11 @@ export class AppComponent implements OnInit {
 
   // setup your signature endpoint here: https://github.com/zoom/websdk-sample-signature-node.js
   // tslint:disable-next-line: max-line-length
-  signatureEndpoint = 'https://mcrboys.herokuapp.com/';
+  signatureEndpoint = 'http://localhost:4000';
   apiKey = 'JvZNVi2QRwKo5FYz5WUUJQ';
   meetingNumber = 88080859044;
   role = 0;
-  leaveUrl = 'https://mohammedhtahir.github.io/mcr-boys/';
+  leaveUrl = 'http://localhost:4200'
   userName = 'Name';
   userEmail = '';
   passWord = '628865';
