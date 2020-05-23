@@ -4,9 +4,6 @@ import { DOCUMENT } from '@angular/common';
 
 import { ZoomMtg } from '@zoomus/websdk';
 
-zoomJSLib='https://source.zoom.us/1.7.0/lib';
-zoomJSAVLib='/av'
-ZoomMtg.setZoomJSLib(zoomJSLib, zoomJSAVLib);
 
 ZoomMtg.preLoadWasm();
 ZoomMtg.prepareJssdk();
@@ -22,12 +19,12 @@ export class AppComponent implements OnInit {
   // tslint:disable-next-line: max-line-length
   signatureEndpoint = 'https://mcrboys.herokuapp.com/';
   apiKey = 'JvZNVi2QRwKo5FYz5WUUJQ';
-  meetingNumber = 88080859044;
+  meetingNumber = 5750457879;
   role = 0;
   leaveUrl = 'https://mohammedhtahir.github.io/mcr-boys/';
   userName = 'Name';
   userEmail = '';
-  passWord = '628865';
+  passWord = '205354';
 
   constructor(public httpClient: HttpClient, @Inject(DOCUMENT) document) {
 
