@@ -1,4 +1,5 @@
-import { Component, OnInit, Inject } from '@angular/core';
+import { Component, OnInit, Input, Inject } from '@angular/core';
+
 import { HttpClient } from '@angular/common/http';
 import { DOCUMENT } from '@angular/common';
 
@@ -14,6 +15,8 @@ ZoomMtg.prepareJssdk();
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
+
+  model: any = {};
 
   // setup your signature endpoint here: https://github.com/zoom/websdk-sample-signature-node.js
   // tslint:disable-next-line: max-line-length
@@ -55,15 +58,34 @@ export class AppComponent implements OnInit {
     document.getElementById('zmmtg-root').style.display = 'block'
 
     ZoomMtg.init({
+      debug: true, //optional
+    showMeetingHeader: true, //option
+    disableInvite: false, //optional
+    disableCallOut: false, //optional
+    disableRecord: false, //optional
+    disableJoinAudio: false, //optional
+    audioPanelAlwaysOpen: true, //optional
+    showPureSharingContent: false, //optional
+    isSupportAV: true, //optional,
+    isSupportChat: true, //optional,
+    isSupportQA: true, //optional,
+    isSupportCC: true, //optional,
+    screenShare: true, //optional,
+    rwcBackup: '', //optional,
+    videoDrag: true, //optional,
+    sharingMode: 'both', //optional,
+    videoHeader: true, //optional,
+    isLockBottom: true, // optional,
+    isSupportNonverbal: true, // optional,
+    isShowJoiningErrorDialog: true, // optional,
       leaveUrl: this.leaveUrl,
-      isSupportAV: true,
       success: (success) => {
         console.log(success)
 
         ZoomMtg.join({
           signature: signature,
           meetingNumber: this.meetingNumber,
-          userName: this.userName,
+          userName: this.model.username,
           apiKey: this.apiKey,
           userEmail: this.userEmail,
           passWord: this.passWord,
